@@ -19,6 +19,8 @@
   "homepage": "https://github.com/wmcmillan/node-burgers#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "handlebars": "^4.7.6"
+    "express-handlebars": "^5.1.0",
+    "handlebars": "^4.7.6",
+    "mysql": "^2.18.1"
   }
 }
