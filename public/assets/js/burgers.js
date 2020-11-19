@@ -11,10 +11,10 @@ $(function() {
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
-      data: consumedState
+      data: newSleepState
     }).then(
       function() {
-        console.log("You have consumed the burger: ",ID);
+        console.log("changed sleep to", newSleep);
         // Reload the page to get the updated list
         location.reload();
       }
@@ -26,7 +26,8 @@ $(function() {
     event.preventDefault();
 
     var newBurger = {
-      burger_name: $("#burger").val().trim(),
+      name: $("#ca").val().trim(),
+      sleepy: $("[name=sleepy]:checked").val().trim()
     };
 
     // Send the POST request.
@@ -46,7 +47,7 @@ $(function() {
     var id = $(this).data("id");
 
     // Send the DELETE request.
-    $.ajax("/api/burger/" + id, {
+    $.ajax("/api/burgers/" + id, {
       type: "DELETE"
     }).then(
       function() {
